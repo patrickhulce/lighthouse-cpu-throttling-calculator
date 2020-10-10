@@ -57,8 +57,16 @@ function MultiplierPredictor(props) {
 
   return (
     <div className={styles.message}>
-      <div className={styles.multiplier}>{multiplierMessages.multiplier.toFixed(1)}x</div>
-      <div className={styles.multiplierRange}>
+      <div
+        className={styles.multiplier}
+        data-tooltip="The best estimate of the cpuSlowdownMultiplier this device should use."
+      >
+        {multiplierMessages.multiplier.toFixed(1)}x
+      </div>
+      <div
+        className={styles.multiplierRange}
+        data-tooltip="The range of the cpuSlowdownMultiplier that this device might actually need."
+      >
         {multiplierMessages.range[0].toFixed(1)}x - {multiplierMessages.range[1].toFixed(1)}x
       </div>
       <code className={styles.code}>
